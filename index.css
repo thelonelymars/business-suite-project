@@ -1,0 +1,173 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.main{
+    display:flex;
+  justify-content:center;
+  flex-direction: column;
+    align-items:center;
+    height: 100%;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat; background-size: cover;
+    
+}
+.Buttons{
+    display: flex;
+    justify-content: space-around;
+    width: 20rem;
+    margin-top: 2%;
+    
+}
+.h1{
+  font-family:'Courier New', Courier, monospace;
+}
+.container-fluid{
+  
+  display:flex;
+  justify-content:center;
+  flex-direction: column;
+    align-items:center;
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat; background-size: cover;
+  background-image: url("img/Free-Download-Abstract-Backgrounds-HD-1105343321.jpeg");
+}
+.outer_layer{
+  display:flex;
+  padding-top: 5%;
+  align-items: center;
+  align-content: space-evenly;
+  justify-content: flex-start;
+  flex-direction: column;
+    background-color: white;
+    height: 80%;
+    width: 40%;
+}
+.outer_calc{
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: white;
+  height: 50%;
+  width: 30%;
+}
+.input_field{
+  width: 100%;
+  height: 50%;
+}
+#input_field1{
+  width:100%;
+  text-align: right;
+  padding-top: 38%;
+  border: 0;
+}
+.Btn_Field{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  width: 100%;
+  height: 100%;
+}
+.numbers_Btn{
+  border: 0;
+}
+.numbers_Btn.zero{
+  grid-column: 1/4;
+  
+}
+.numbers_operator{
+  background-color: gray;
+  border: 0;
+}
+.numbers_operator.equal{
+  grid-column: 4/6;
+  grid-row: 4/5;
+}
+.numbers_operator.clear{
+  grid-column: 4/6;
+  grid-row: 3/4;
+  background-color: grey;
+}
+.numbers_operator:hover{
+  background-color: white;
+}
+.input_layer{
+  display:flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  padding-top: 2%;
+  padding-bottom: 2%;
+    background-color: white;
+   
+}
+.inner_layer{
+  display:flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+    height: 50%;
+    width: 70%;
+    overflow: scroll;
+}
+.button_black{
+  width: 50%;
+}
+.input_bt{
+  margin-right: 10%; 
+}
+.reset{
+  display:flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
+}
+@media (max-width: 480px){
+  .outer_calc{
+    width: 60%;
+    height: 80%;
+  }
+  .outer_layer{
+    display:flex;
+    padding-top: 5%;
+    align-items: center;
+    align-content: space-evenly;
+    justify-content: flex-start;
+    flex-direction: column;
+      background-color: white;
+      height: 80%;
+      width: 80%;
+  }
+}
+@media (min-width: 481px) and (max-width: 1024px) {
+  .outer_calc{
+    width: 60%;
+    height: 80%;
+  }
+  .outer_layer{
+    display:flex;
+    padding-top: 5%;
+    align-items: center;
+    align-content: space-evenly;
+    justify-content: flex-start;
+    flex-direction: column;
+      background-color: white;
+      height: 80%;
+      width: 70%;
+  }
+}
+@media (min-width: 1025px){
+ 
+}
+.removeTaskButton{
+  padding-left: 20%;
+}
+

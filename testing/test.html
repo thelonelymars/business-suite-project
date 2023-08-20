@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <input type="text" id="numberInput" placeholder="Enter numbers only">
+    <script>
+        const numberInput = document.getElementById("numberInput");
+
+numberInput.addEventListener("input", function (event) {
+  const inputValue = event.target.value;
+  const sanitizedValue = inputValue.replace(/[^0-9]/g, ""); // Remove non-numeric characters
+  event.target.value = sanitizedValue;
+});
+    </script>
+  </div>
+  
