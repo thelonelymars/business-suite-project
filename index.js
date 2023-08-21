@@ -3,7 +3,9 @@ const addTaskButton = document.getElementById('button_black');
 const taskList = document.getElementById('taskList');
 const number_btn=document.querySelectorAll(".numbers_Btn");
 const TEXTFIELD=document.getElementById('input_field1');
-let currentInput="";
+let currentInput = "";
+let currentOperation = null;
+let currentResult = null;
 
 
 addTaskButton.addEventListener('click', addTask);
@@ -64,7 +66,39 @@ function number_text(number) {
   TEXTFIELD.value=currentInput
 }
 function clear_numbers(){
-  currentInput=""
-  TEXTFIELD.value=""
+  currentInput = "";
+      currentOperation = null;
+      currentResult = null;
+      TEXTFIELD.value = "";
 }
-
+function operation(op) {
+  if (currentResult === null) {
+    currentResult = parseFloat(currentInput);
+  } else {
+    currentResult = performOperation();
+  }
+  currentInput = "";
+  TEXTFIELD.value="";
+  currentOperation = op;
+}
+function performOperation() {
+  switch (currentOperation) {
+    case "+":
+      return currentResult + parseFloat(currentInput);
+    case "-":
+      return currentResult - parseFloat(currentInput);
+    case "*":
+      return currentResult * parseFloat(currentInput);
+    case "/":
+      return currentResult / parseFloat(currentInput);
+  }
+}
+function calculate() {
+  if (currentResult !== null && currentOperation !== null) {
+    
+    currentResult = performOperation();
+    TEXTFIELD.value = currentResult;
+    currentInput = "";
+    currentOperation = null;
+  }
+}

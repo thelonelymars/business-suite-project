@@ -16,23 +16,20 @@
                     <button class="numbers_Btn one" onclick="number_text('1')">1</button>
                     <button class="numbers_Btn two" onclick="number_text('2')">2</button>
                     <button class="numbers_Btn three" onclick="number_text('3')">3</button>
-                    <button class="numbers_operator plus">+</button>
-                    <button class="numbers_operator minus">-</button>
+                    <button class="numbers_operator plus" onclick="operation('+')">+</button>
+                    <button class="numbers_operator minus" onclick="operation('-')">-</button>
                     <button class="numbers_Btn four" onclick="number_text('4')">4</button>
                     <button class="numbers_Btn five" onclick="number_text('5')">5</button>
                     <button class="numbers_Btn six" onclick="number_text('6')">6</button>
-                    <button class="numbers_operator divide">/</button>
-                    <button class="numbers_operator multiply">X</button>
+                    <button class="numbers_operator divide" onclick="operation('/')">/</button>
+                    <button class="numbers_operator multiply" onclick="operation('*')">X</button>
                     <button class="numbers_Btn seven" onclick="number_text('7')">7</button>
                     <button class="numbers_Btn eight" onclick="number_text('8')">8</button>
                     <button class="numbers_Btn nine" onclick="number_text('9')">9</button>
                     <button class="numbers_operator clear" onclick="clear_numbers()">C</button>
-                    <button class="numbers_operator equal">=</button>
+                    <button class="numbers_operator equal" onclick="calculate()">=</button>
                     <button class="numbers_Btn zero" onclick="number_text('0')">0</button>
-                    
-                     
                 </section>
-                
             </section>
     </div>
    <script src="index.js"></script>
