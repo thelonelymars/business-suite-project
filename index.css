@@ -66,8 +66,10 @@ html, body {
   text-align: right;
   padding-top: 38%;
   border: 0;
+  font-size: medium;
 }
 .Btn_Field{
+  background-color: #0c69ff;
   display: grid;
   grid-template-columns: repeat(5,1fr);
   width: 100%;

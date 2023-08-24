@@ -3,9 +3,11 @@ const addTaskButton = document.getElementById('button_black');
 const taskList = document.getElementById('taskList');
 const number_btn=document.querySelectorAll(".numbers_Btn");
 const TEXTFIELD=document.getElementById('input_field1');
+const numberInput = document.getElementById("input_field1");
 let currentInput = "";
 let currentOperation = null;
 let currentResult = null;
+let nextValue=0;
 
 
 addTaskButton.addEventListener('click', addTask);
@@ -20,6 +22,11 @@ function addTask() {
   taskInput.value = '';
 }
 
+numberInput.addEventListener("input", function (event) {
+  const inputValue = event.target.value;
+  const sanitizedValue = inputValue.replace(/[^0-9]/g, ""); // Remove non-numeric characters
+  event.target.value = sanitizedValue;
+});
 function createTaskItem(id, text) {
   const taskItem = document.createElement('li');
   taskItem.innerHTML = `
@@ -70,35 +77,43 @@ function clear_numbers(){
       currentOperation = null;
       currentResult = null;
       TEXTFIELD.value = "";
+      nextValue=0;
 }
 function operation(op) {
-  if (currentResult === null) {
+  currentOperation = op;
+  if (currentResult === null && nextValue==0) {
     currentResult = parseFloat(currentInput);
-  } else {
-    currentResult = performOperation();
+  } else if (nextValue!==0 && currentResult===null){
+    currentResult=parseFloat(nextValue);
+    nextValue=0;
+  }else  {
+    currentResult = performOperation(currentInput);
   }
   currentInput = "";
   TEXTFIELD.value="";
-  currentOperation = op;
+  
+  
 }
-function performOperation() {
+function performOperation(value) {
   switch (currentOperation) {
     case "+":
-      return currentResult + parseFloat(currentInput);
+      return currentResult + parseFloat(value);
     case "-":
-      return currentResult - parseFloat(currentInput);
+      return currentResult - parseFloat(value);
     case "*":
-      return currentResult * parseFloat(currentInput);
+      return currentResult * parseFloat(value);
     case "/":
-      return currentResult / parseFloat(currentInput);
+      return currentResult / parseFloat(value);
   }
 }
 function calculate() {
   if (currentResult !== null && currentOperation !== null) {
     
-    currentResult = performOperation();
+    currentResult = performOperation(currentInput);
     TEXTFIELD.value = currentResult;
+    nextValue=parseFloat(TEXTFIELD.value);
     currentInput = "";
+    currentResult=null;
     currentOperation = null;
   }
 }
