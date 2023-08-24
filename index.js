@@ -3,7 +3,7 @@ const addTaskButton = document.getElementById('button_black');
 const taskList = document.getElementById('taskList');
 const number_btn=document.querySelectorAll(".numbers_Btn");
 const TEXTFIELD=document.getElementById('input_field1');
-const numberInput = document.getElementById("input_field1");
+
 let currentInput = "";
 let currentOperation = null;
 let currentResult = null;
@@ -21,12 +21,6 @@ function addTask() {
   taskList.appendChild(taskItem);
   taskInput.value = '';
 }
-
-numberInput.addEventListener("input", function (event) {
-  const inputValue = event.target.value;
-  const sanitizedValue = inputValue.replace(/[^0-9]/g, ""); // Remove non-numeric characters
-  event.target.value = sanitizedValue;
-});
 function createTaskItem(id, text) {
   const taskItem = document.createElement('li');
   taskItem.innerHTML = `
