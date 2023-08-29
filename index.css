@@ -89,6 +89,10 @@ html, body {
   background-color: gray;
   border: 0;
 }
+.add_btn{
+  width: 50%;
+  height: 100%;
+}
 .numbers_operator.equal{
   grid-column: 4/6;
   grid-row: 4/5;
@@ -137,7 +141,7 @@ html, body {
 }
 @media (max-width: 480px){
   .outer_calc{
-    width: 60%;
+    width: 96%;
     height: 80%;
   }
   .outer_layer{
@@ -149,12 +153,20 @@ html, body {
     flex-direction: column;
       background-color: white;
       height: 80%;
-      width: 80%;
+      width: 90%;
+  }
+  .add_btn{
+    width: 30%;
+    height: 100%;
+  }
+  .input_bt{
+    margin-right: 2%;
+    width: 60%;
   }
 }
 @media (min-width: 481px) and (max-width: 1024px) {
   .outer_calc{
-    width: 60%;
+    width: 90%;
     height: 80%;
   }
   .outer_layer{
@@ -166,7 +178,13 @@ html, body {
     flex-direction: column;
       background-color: white;
       height: 80%;
-      width: 70%;
+      width: 90%;
+  }
+  .add_btn{
+    width: 60%;
+  }
+  .input_bt{
+    margin-right: 2%;
   }
 }
 @media (min-width: 1025px){
